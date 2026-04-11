@@ -25,7 +25,7 @@ Article "{{ item.title }}" (Page ID {{ item.page_id }}) was created at {{ format
 
 
 <script id="task_id">
-{# INPUT #}
+// INPUT
 let data = [
 {"page_id": 6682420, "creation_date": "2021-09-13", "title": "André Baniwa"},
 {"page_id": 4246775, "creation_date": "2013-12-10", "title": "Benki Piyãko"},
@@ -41,9 +41,10 @@ let data = [
 {"page_id": 6549130, "creation_date": "2021-04-10", "title": "Zezico Guajajara"},
 ];
 
-{# YOUR CODE HERE #}
+// YOUR CODE HERE
+data = data.sort((a, b) => new Date(a.creation_date) - new Date(b.creation_date));
 </script>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="vue.global.js"></script>
 <script>
 // Show the task code inside the "My code" section.
 document.getElementById("code").innerText = document.getElementById("task_id").text;
@@ -53,20 +54,7 @@ data() {
 return {
 
 // Article data rendered by the Vue template.
-object:[
-{"page_id": 6682420, "creation_date": "2021-09-13", "title": "André Baniwa"},
-{"page_id": 4246775, "creation_date": "2013-12-10", "title": "Benki Piyãko"},
-{"page_id": 5882073, "creation_date": "2018-12-03", "title": "Célia Xakriabá"},
-{"page_id": 6977673, "creation_date": "2022-10-05", "title": "Chirley Pankará"},
-{"page_id": 7069044, "creation_date": "2023-02-16", "title": "Cristine Takuá"},
-{"page_id": 2119511, "creation_date": "2009-01-28", "title": "Eliane Potiguara"},
-{"page_id": 6714407, "creation_date": "2021-10-09", "title": "Jaider Esbell"},
-{"page_id": 6977117, "creation_date": "2022-10-04", "title": "Jerônimo Rodrigues"},
-{"page_id": 6935831, "creation_date": "2022-08-02", "title": "Nanblá Gakran"},
-{"page_id": 4908665, "creation_date": "2015-11-13", "title": "Sônia Guajajara"},
-{"page_id": 5886895, "creation_date": "2018-12-12", "title": "Vãngri Kaingáng"},
-{"page_id": 6549130, "creation_date": "2021-04-10", "title": "Zezico Guajajara"},
-],
+object: data,
 
 
 }
